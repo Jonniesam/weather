@@ -1,0 +1,290 @@
+body{
+    height: 95vh;
+    background-image: url(./img/weatherBackground.png);
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+
+
+
+.des{
+    flex-direction: column;
+    margin: 0;
+}
+
+.weatherIcon{
+    height: 75px;
+    width: 75px;
+}
+
+#currentCard, form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top,
+.forecast {
+    padding-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#currentCard > * {
+    margin: 0;
+}
+
+.highlow {
+    display: flex;
+    margin: 0;
+}
+
+.forecast{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: 4%;
+    justify-items: center;
+    margin-top: 10%;
+}
+
+.card{
+    width: 200px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    background-color: rgba(43,22,78, 0.3);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px white;
+    transition: 200ms ease-in-out
+}
+
+.card:hover{
+    box-shadow: 0 0 7px rgb(63, 245, 63);
+}
+
+.card > *{
+    margin: 2px;
+    font-weight: bold;
+}
+
+.card > :nth-child(4), :nth-child(5){
+font-weight: normal;
+text-transform: capitalize;
+}
+
+.card > :first-child {
+    font-size: clamp(0.5rem, 1.3rem, 1.3rem);
+}
+
+.card > :nth-child(2) {
+    font-size: clamp(0.5rem, 1.5rem, 1.5rem);
+}
+
+.card > :nth-child(5){
+    font-size: clamp(0.5rem, 0.8rem, 2rem);
+}
+
+#submit{
+    display: none;
+}
+
+input{
+    margin-top: 5%;
+    background-color: rgb(168 161 161 / 10%);
+    border: none;
+    border-bottom: 2px solid white;
+    padding-left: 4%;
+    color: white;
+    padding: 3%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: rgba(43,22,78, 0.4);
+}
+
+input::placeholder{
+    color:white;
+    font-size: 1rem;
+    padding-left: 2%;
+}
+
+input:focus{
+    outline: none;
+    background-color: rgba(43,22,78, 0.8);
+    
+}
+
+.extraInfo > *{
+    font-size: 1.7rem;
+}
+
+.feelsLike::before, 
+.humidity::before,
+.windSpeed::before{
+    content:"";
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+    white-space: normal;
+    margin-right: 10px;
+    margin-left:-50px;
+}
+
+
+.feelsLike::before{
+   
+    background: url(./img/feelsLike.png);
+    background-size: 100%, 100%;
+}
+
+.humidity::before{
+    
+    background: url(./img/humidity.png);
+    background-size: 100%, 100%;
+}
+.humidity::before{
+   
+    background: url(./img/humidity.png);
+    background-size: 100%, 100%;
+}
+
+.windSpeed::before{
+    
+    background: url(./img/windSpeed.png);
+    background-size: 100%, 100%;
+}
+
+
+
+.active,
+.degree {
+    
+    
+    color: white;
+    border: 1.5px solid white;
+    border: none;
+    background-color: rgba(43,22,78, 0);
+    font-size: 1rem;
+    padding: 3% 6px;
+}
+
+.active {
+    background-color: rgb(68,32,105);
+    transition: 800ms;
+    
+}
+
+.degree:hover{
+    cursor: pointer;
+}
+
+.temp {
+    margin-top: 3%;
+    background-color: rgba(43,22,78, 0.4);
+    border-bottom: 2px solid white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 0;
+}
+
+.fahrenheit.active{
+    border-top-right-radius: 5px;
+}
+
+.celsius.active{
+    border-top-left-radius: 5px;
+}
+
+
+
+@media(max-width: 1500px){
+    .forecast{
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    }
+}
+
+@media(max-width: 720px){
+    .forecast{
+        display: flex;
+        flex-direction: column;
+    }
+    .card {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2%;
+        gap: 2%;
+        border-bottom: none;
+        background-color: rgba(43,22,78, 0.75);
+    }
+    .card > :first-child {
+        font-size: clamp(0.5rem, 1rem, 1.3rem);
+    }
+    
+    .card > :nth-child(2) {
+        font-size: clamp(0.5rem, 1.2rem, 1.5rem);
+    }
+
+    .extraInfo > *{
+    font-size: 1.3rem;
+    }
+
+    
+    
+
+}
+
+@media (max-width: 490px){
+    .card {
+        width: 95%;
+        margin: 5% 0;
+    }
+    .extraInfo{
+        margin-left: 20%
+    }
+
+    #location {
+        padding-left: 26%;
+    }
+
+    #description {
+        margin-left: 20%
+    }
+
+    .extraInfo > *{
+        font-size: 1rem;
+        }
+    
+    .active,
+    .degree {
+    
+    font-size: 0.93rem;
+    
+}
+}
+
+
+@media (max-width: 394px){ 
+    
+    .active,
+    .degree {  
+    font-size: 0.89rem; 
+}
+.forecast{
+    margin-top: -1%;
+}
+
+}

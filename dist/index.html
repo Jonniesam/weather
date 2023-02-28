@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+   
+  <div class="content">
+    <div class ='top'>
+  <div id="currentCard">
+<h1 id="location"></h1>
+<h2 id =currentDay></h2>
+<h1 id=currentWeather></h1>
+<img id="weatherIcon" class="weatherIcon" src="" alt="">
+<h2 id ="description"></h2>
+<h4 id=high></h4>
+<form action="">
+  <input type="text" id="search" name="search" placeholder="search...">
+  <button type="submit" id="submit"></button>
+  <div id="temp" class="temp">
+  <button id="celsius" class="celsius degree">Display °C</button>
+  <button id="fahrenheit" class="fahrenheit degree">Display °F</button>
+</div>
+</form>
+</div>
+<div class="extraInfo">
+  <p id="feelsLike" class="feelsLike"></p>
+  <p id="humidity" class="humidity"></p>
+  <p id="windSpeed" class="windSpeed"></p>
+</div>
+</div>
+
+
+<div id="fiveDayForecast" class="forecast">
+  <div id="dayOne" class="dayOne card" data-forecast-day>
+    <p id="1"></p>
+    <p id="1Afternoon"></p>  
+    <img id="1Icon" src="">
+    <p id="1Description"></p>
+    <p id="1Morning"></p>
+  </div>
+  <div id="dayTwo" class="dayTwo card" data-forecast-day>
+    <p id="2"></p>
+    <p id="2Afternoon"></p>  
+    <img id="2Icon" src="">
+    <p id="2Description"></p>
+    <p id="2Morning"></p>
+  </div>
+  <div id="dayThree" class="dayThree card" data-forecast-day>
+    <p id="3"></p>
+    <p id="3Afternoon"></p>  
+    <img id="3Icon" src="">
+    <p id="3Description"></p>
+    <p id="3Morning"></p>
+  </div>
+  <div id="dayFour" class="dayFour card" data-forecast-day>
+    <p id="4"></p>
+    <p id="4Afternoon"></p>  
+    <img id="4Icon" src="">
+    <p id="4Description"></p>
+    <p id="4Morning"></p>
+  </div>
+  <div id="dayFive" class="dayFive card" data-forecast-day>
+    <p id="5"></p>
+    <p id="5Afternoon"></p>  
+    <img id="5Icon" src="">
+    <p id="5Description"></p>
+    <p id="5Morning"></p>
+  </div>
+</div>
+  
+</div>
+    
+    <script src="bundle.js"></script>
+</body>
+</html>
